@@ -11,6 +11,10 @@ var ErrNoAuthHeaderIncluded = errors.New("no authorization header included")
 // GetAPIKey -
 func GetAPIKey(headers http.Header) (string, error) {
 	authHeader := headers.Get("Authorization")
+
+	// TODO: break CI tests to ensure it works
+	return "pass", nil
+
 	if authHeader == "" {
 		return "", ErrNoAuthHeaderIncluded
 	}
